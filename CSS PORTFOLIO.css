@@ -1,0 +1,289 @@
+3/* Reset some default styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensure better box model handling */
+}
+/* Profile Section */
+.profile-photo-section {
+  position: static; /* To position the overlay */
+  width: 150px; /* Adjust as needed */
+  height: 150px; /* Adjust to match width for a circle */
+  border-radius: 50%; /* Creates a circular shape */
+  overflow: hidden; /* Clips the image to the rounded border */
+  margin: 0 auto; /* Centers the section horizontally */
+}
+.profile-photo {
+  display: block;
+  width: 100%;
+  height: 110%;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition on hover */
+  border-radius: 50%; /* Match the image border-radius */
+}
+
+.profile-photo-section:hover .overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+.view-more {
+  color: rgb(133, 44, 44);
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Body and global styles */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4; /* Light gray background */
+  color: #0b0b01;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container for consistent layout */
+.container {
+  width: 85%; /* Adjusted for a bit more space on smaller screens */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.top-container {
+  width: 100%; /* Ensure it spans the full width of the container */
+  margin: 1.5rem auto;
+}
+
+.display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #9d7ba6f7, rgba(217, 223, 217, 0.2)); /* Darker, more defined gradient */
+  color: rgb(30, 11, 11);
+  padding: 60px 0;
+  text-align: center;
+}
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #180505;
+}
+
+header .subtitle {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #0d061d97;
+  margin-top: 1.5rem;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+header nav ul li a {
+  color: rgba(4, 2, 4, 0.973);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  padding: 10px;
+  border-style: hidden;
+  border-radius: 7px;
+  background-color: #00040a1a;
+}
+
+header nav ul li a:hover {
+  color: rgb(123, 139, 147);
+  position: relative;
+  transform: translateZ(-10px);
+}
+
+/* Section styles */
+.section {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #b0c4de, rgba(124, 66, 66, 0.2)); /* Soft blue gradient */
+  margin-bottom: 20px;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: rgb(254, 252, 254);
+}
+
+.section p {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Timeline styles */
+.timeline {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  overflow-x: auto;
+  padding: 10rem 4rem;
+}
+
+.timeline::before {
+  display: flex;
+  align-content: center;
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 70%;
+  height: 4px;
+  background-color: rgb(160, 208, 208);
+  z-index: 0;
+}
+
+.timeline-step {
+  position: relative;
+  flex: 0 0 200px;
+  text-align: center;
+  transition: transform 0.5s ease;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(255, 255, 255);
+  border: 4px solid rgb(123, 169, 140);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.content {
+  background-color: #000000;
+  padding: 15px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 220px;
+  box-shadow: 0 4px 12px rgba(45, 38, 38, 0.1);
+  position: relative;
+}
+.skill {
+  flex: 1;
+  background-color: #5a8bbf;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #180303;
+  transition: transform 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-10px);
+}
+
+.skill h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: rgb(195, 232, 11);
+}
+
+
+/* Resume Section */
+.resume {
+  background-color: #d7d0d5;
+  text-align: center; /* Center the text horizontally */
+  display: flex; /* Use flexbox for vertical centering */
+  justify-content: center; /* Horizontally center the text */
+  align-items: center; /* Vertically center the text */
+  height: 50%; /* Ensure full height of the parent container */
+  padding: 1px;
+}
+
+.resume h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+.resume photo{
+  background-color: #515374;
+  position-area: left;
+  position: sticky;
+}
+.resume  {
+  color: #435569;
+  text-decoration: currentColor;
+}
+
+/* Projects Section */
+.projects {
+  display: flex;
+  gap: 100px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project1 {
+  background-color: #75772c; /* Soft gray background for project cards */
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 40%;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.project1:hover {
+  transform: translateY(-10px);
+}
+
+.project1 h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: rgb(182, 186, 186);
+}
+
+.project1 a {
+  display: inline-block;
+  background-color: #97260d;
+  color: #d7cdcd;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 15px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.project1 a:hover {
+  background-color: #0c1166;
+}
+<a href="contact">Contact</a>
+
+<div style="height: 1000px;"></div> <!-- Just for spacing -->
+
+<section id="contact">
+  <h2>Contact Section</h2>
+</section>
